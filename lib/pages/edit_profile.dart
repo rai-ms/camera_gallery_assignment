@@ -1,3 +1,5 @@
+import 'package:camera_gallery_assignment/pages/homepage.dart';
+import 'package:camera_gallery_assignment/utils/route_name/route_name.dart';
 import 'package:flutter/material.dart';
 
 import '../components/column_details/column_details.dart';
@@ -20,7 +22,8 @@ class _EditProfileState extends State<EditProfile> {
         backgroundColor: AppColor.GREEN_BACKGROUND,
         leading: InkWell(
           onTap: (){
-            showModalBottomSheet(context: context, builder: (context) => BottomSheetCameraGallery());
+            // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MyHomePage(title: 'Flutter Camera Gallery Permission')), );
+            // Navigator.pushNamed(context, RouteName.HOMEPAGE);
           },
           child: const Icon(
             Icons.arrow_back,
@@ -40,16 +43,16 @@ class _EditProfileState extends State<EditProfile> {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.only(top: 50),
+          padding: EdgeInsets.only(top: 50),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ImagePickerProfile(),
-              const SizedBox(
+              SizedBox(
                 height: 50,
               ),
-              const DetailsColumn(),
+              DetailsColumn(),
             ],
           ),
         ),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../constants/app_color.dart';
 import '../../constants/constants.dart';
+import '../show_camera_gallery_image_bottomsheet/show_camera_gallery_image_bottomsheet.dart';
 
 class ImagePickerProfile extends StatelessWidget {
   /// This class is used to fetch image using camera and gallery
@@ -39,6 +40,12 @@ class ImagePickerProfile extends StatelessWidget {
               child: IconButton(
                 onPressed: () async {
                   // Show the bottom sheet and wait for the result (selected image)
+                  File? image = await showModalBottomSheet(
+                    context: context,
+                    showDragHandle: true,
+                    enableDrag: true,
+                    builder: (context) => BottomSheetCameraGallery(),
+                  );
                 },
                 icon: const Icon(Icons.camera_alt_rounded),
                 color: Colors.white,
