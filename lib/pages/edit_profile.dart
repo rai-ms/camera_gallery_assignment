@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../components/column_details/column_details.dart';
 import '../components/profile_image_picker/profile_image_picker.dart';
+import '../components/show_camera_gallery_image_bottomsheet/show_camera_gallery_image_bottomsheet.dart';
 import '../constants/app_color.dart';
 
 class EditProfile extends StatefulWidget {
@@ -18,7 +19,9 @@ class _EditProfileState extends State<EditProfile> {
       appBar: AppBar(
         backgroundColor: AppColor.GREEN_BACKGROUND,
         leading: InkWell(
-          onTap: (){},
+          onTap: (){
+            showModalBottomSheet(context: context, builder: (context) => BottomSheetCameraGallery());
+          },
           child: const Icon(
             Icons.arrow_back,
             color: Colors.white,
