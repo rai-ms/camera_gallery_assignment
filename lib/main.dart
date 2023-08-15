@@ -1,4 +1,3 @@
-import 'package:camera_gallery_assignment/pages/edit_profile.dart';
 import 'package:camera_gallery_assignment/utils/route_name/route_name.dart';
 import 'package:camera_gallery_assignment/utils/route_name/route_navigation.dart';
 import 'package:flutter/material.dart';
